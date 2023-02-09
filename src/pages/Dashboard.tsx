@@ -16,14 +16,9 @@ import { useEffect, useState } from "react";
 import SideNav from "../components/SideNav";
 import TotalIncome from "../layouts/TotalIncome";
 import SalesStats from "../layouts/SalesChart";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../redux/store";
-import {
-  setCost,
-  setIncome,
-  setPrevCost,
-  setPrevIncome,
-} from "../redux/reducers/salesReducer";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../redux/store";
+import { setCost, setIncome } from "../redux/reducers/salesReducer";
 import TotalCost from "../layouts/TotalCost";
 import Revenue from "../layouts/Revenue";
 
@@ -59,10 +54,6 @@ export default function Dashboard({}: Props) {
   useEffect(() => {
     dispatch(setIncome(week));
     dispatch(setCost(week));
-
-    let prevWeek = parseInt(week) + 1;
-    dispatch(setPrevIncome(prevWeek.toString()));
-    dispatch(setPrevCost(prevWeek.toString()));
   }, [week]);
 
   return (
@@ -107,12 +98,12 @@ export default function Dashboard({}: Props) {
             <Grid container spacing={3}>
               <Grid item xs={6}>
                 <Item>
-                  <TotalIncome week={week} />
+                  <TotalIncome />
                 </Item>
               </Grid>
               <Grid item xs={6}>
                 <Item>
-                  <TotalCost week={week} />
+                  <TotalCost />
                 </Item>
               </Grid>
               <Grid item xs={12}>
@@ -124,7 +115,7 @@ export default function Dashboard({}: Props) {
           </Grid>
           <Grid item xs={7}>
             <Item>
-              <SalesStats week={week} />
+              <SalesStats />
             </Item>
           </Grid>
         </Grid>

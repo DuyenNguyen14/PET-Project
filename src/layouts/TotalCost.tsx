@@ -4,10 +4,10 @@ import { RootState } from "../redux/store";
 import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
 
-type Props = { week: string };
+type Props = {};
 
-export default function TotalCost({ week }: Props) {
-  const { cost, prevCost } = useSelector((state: RootState) => state.sales);
+export default function TotalCost({}: Props) {
+  const { cost } = useSelector((state: RootState) => state.sales);
 
   const option = {
     xAxis: {
@@ -24,13 +24,13 @@ export default function TotalCost({ week }: Props) {
       {
         showSymbol: false,
         type: "line",
-        data: cost.length === 7 && cost,
+        data: cost.current,
         color: "#676E8A",
       },
       {
         showSymbol: false,
         type: "line",
-        data: prevCost.length === 7 && prevCost,
+        data: cost.previous,
         color: "#676e8a91",
         lineStyle: {
           type: "dashed",
@@ -48,8 +48,8 @@ export default function TotalCost({ week }: Props) {
           component="span"
           sx={{ fontWeight: "700", fontSize: "18px", color: "#000" }}
         >
-          {cost.length === 7 &&
-            cost.reduce((a, b) => a + b, 0).toLocaleString("vi")}{" "}
+          {cost.current.length === 7 &&
+            cost.current.reduce((a, b) => a + b, 0).toLocaleString("vi")}{" "}
         </Typography>
         <Typography component="span">vnd</Typography>
         <Box>
