@@ -12,14 +12,10 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SideNav from "../components/SideNav";
 import TotalIncome from "../layouts/TotalIncome";
-import myData from "../data.json";
 import SalesStats from "../layouts/SalesChart";
-import { useDispatch, useSelector } from "react-redux";
-import { setSalesStats } from "../redux/reducers/dashboardReducer";
-import { RootState } from "../redux/store";
 
 type Props = {};
 
@@ -90,7 +86,7 @@ export default function Dashboard({}: Props) {
             <Grid container spacing={3}>
               <Grid item xs={6}>
                 <Item>
-                  <TotalIncome />
+                  <TotalIncome week={week} />
                 </Item>
               </Grid>
               <Grid item xs={6}>

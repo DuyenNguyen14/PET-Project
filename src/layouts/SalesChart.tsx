@@ -1,33 +1,29 @@
 import { Divider } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSalesStats } from "../redux/reducers/dashboardReducer";
 import { RootState } from "../redux/store";
 import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
+import { setCost, setIncome } from "../redux/reducers/salesReducer";
 
 type Props = { week: string };
 
 export default function SalesChart({ week }: Props) {
-  const salesStats = useSelector(
-    (state: RootState) => state.dashboard.salesStats
-  );
+  const { income, cost } = useSelector((state: RootState) => state.sales);
+  console.log({ income });
+  console.log({ cost });
 
-  const getSalesArray = (key: string) => {
-    const array = [];
-    if (salesStats.length > 0) {
-      for (const stat of salesStats) {
-        if (key === "ros") {
-          let ros = (((stat.income - stat.cost) * 100) / stat.income).toFixed(
-            2
-          );
-          array.push(ros);
-        } else {
-          let value = stat[key] / 1000;
-          array.push(value);
-        }
-      }
-      return array;
+  const incomeArrayLocaled =
+    income.length === 7 && income.map((value) => value / 1000);
+
+  const costArrayLocaled =
+    cost.length === 7 && cost.map((value) => value / 1000);
+
+  const rosArray = () => {
+    if (income.length > 0 && cost.length > 0 && income.length === cost.length) {
+      return income.map((value, index) =>
+        (((value - cost[index]) * 100) / value).toFixed(2)
+      );
     }
   };
 
@@ -49,7 +45,7 @@ export default function SalesChart({ week }: Props) {
       {
         show: true,
         type: "value",
-        name: "Value (1,000 vnd)",
+        name: "Value (1.000 vnd)",
         interval: 100000,
         min: 0,
         max: 500000,
@@ -72,19 +68,19 @@ export default function SalesChart({ week }: Props) {
       {
         name: "Income",
         type: "bar",
-        data: getSalesArray("income"),
+        data: incomeArrayLocaled,
         color: "#FF7E41",
       },
       {
         name: "Cost",
         type: "bar",
-        data: getSalesArray("cost"),
+        data: costArrayLocaled,
         color: "#8E96B6",
       },
       {
         name: "Returns on Sales",
         type: "line",
-        data: getSalesArray("ros"),
+        data: rosArray(),
         yAxisIndex: 1,
         color: "#33BDEA",
         tooltip: {
@@ -97,7 +93,8 @@ export default function SalesChart({ week }: Props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setSalesStats(week));
+    dispatch(setIncome(week));
+    dispatch(setCost(week));
   }, [week]);
 
   return (
@@ -105,7 +102,9 @@ export default function SalesChart({ week }: Props) {
       <CardTitle>Income & Cost in 7 days</CardTitle>
       <Divider />
       <CardText>
-        <ReactECharts option={option} />
+        {income.length === 7 && cost.length === 7 && (
+          <ReactECharts option={option} />
+        )}
       </CardText>
     </>
   );

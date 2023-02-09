@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dashboardReducer from "./reducers/dashboardReducer";
+import salesReducer from "./reducers/salesReducer";
 
 export const store =  configureStore({
   reducer: {
-    dashboard: dashboardReducer,
+    sales: salesReducer,
   },
 });
 
