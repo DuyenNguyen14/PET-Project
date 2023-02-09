@@ -9,16 +9,10 @@ type Props = {};
 export default function SalesChart({}: Props) {
   const { income, cost } = useSelector((state: RootState) => state.sales);
 
-  const incomeArrayLocaled =
-    income.current.length === 7 && income.current.map((value) => value / 1000);
-
-  const costArrayLocaled =
-    cost.current.length === 7 && cost.current.map((value) => value / 1000);
-
   const rosArray = () => {
     if (income.current.length === 7 && cost.current.length === 7) {
-      return income.current.map((value, index) =>
-        (((value - cost.current[index]) * 100) / value).toFixed(2)
+      return income.current.map(
+        (value, index) => ((value - cost.current[index]) * 100) / value
       );
     }
   };
@@ -39,39 +33,54 @@ export default function SalesChart({}: Props) {
     },
     yAxis: [
       {
+        axisLabel: {
+          formatter: (value: number) => value / 100000 + "m",
+        },
         show: true,
         type: "value",
-        name: "Value (1.000 vnd)",
-        interval: 100000,
-        min: 0,
-        max: 500000,
-        splitLine: {
-          show: false,
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: "#FF7E41",
+          },
         },
       },
       {
+        axisLabel: {
+          formatter: (value: number) => value + "%",
+        },
+        axisLine: {
+          show: true,
+          lineStyle: {
+            color: "#33BDEA",
+          },
+        },
         interval: 20,
         type: "value",
-        name: "%",
         min: 0,
         max: 100,
-        splitLine: {
-          show: false,
-        },
       },
     ],
     series: [
       {
         name: "Income",
         type: "bar",
-        data: incomeArrayLocaled,
+        data: income.current,
         color: "#FF7E41",
+        tooltip: {
+          valueFormatter: (value: number) =>
+            value.toLocaleString("vi") + " vnd",
+        },
       },
       {
         name: "Cost",
         type: "bar",
-        data: costArrayLocaled,
+        data: cost.current,
         color: "#8E96B6",
+        tooltip: {
+          valueFormatter: (value: number) =>
+            value.toLocaleString("vi") + " vnd",
+        },
       },
       {
         name: "Returns on Sales",
@@ -80,7 +89,7 @@ export default function SalesChart({}: Props) {
         yAxisIndex: 1,
         color: "#33BDEA",
         tooltip: {
-          valueFormatter: (value: number) => value + " %",
+          valueFormatter: (value: number) => value.toLocaleString("vi") + " %",
         },
       },
     ],
