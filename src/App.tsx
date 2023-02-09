@@ -1,10 +1,14 @@
+import { ThemeProvider } from "@mui/material/styles";
 import Dashboard from "./pages/Dashboard";
+import { mainTheme } from "./theme/mainTheme";
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <ThemeProvider theme={mainTheme}>
+      <div className="App">
+        <Dashboard />
+      </div>
+    </ThemeProvider>
   );
 }
 

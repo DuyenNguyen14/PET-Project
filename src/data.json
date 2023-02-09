@@ -1,0 +1,626 @@
+[
+  {
+    "week": 1,
+    "topProducts": [
+      {
+        "name": "TH true MILK UHT Pure Fresh Milk (180ml)",
+        "quantity": 2508,
+        "earned": 91040400
+      },
+      {
+        "name": "TH true MILK Organic 500ml",
+        "quantity": 735,
+        "earned": 23887500
+      },
+      { "name": "C.P Pork 500gr", "quantity": 198, "earned": 18612000 },
+      {
+        "name": "HaoHao Instant Noodle (75gr*30)",
+        "quantity": 125,
+        "earned": 14750000
+      },
+      {
+        "name": "Neptune Light Cooking Oil (1l)",
+        "quantity": 338,
+        "earned": 14534000
+      }
+    ],
+    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "targetRevenue": 1000,
+    "salesStats": [
+      { "income": 323755000, "cost": 128774000 },
+      { "income": 375663000, "cost": 206405783 },
+      { "income": 395068000, "cost": 247359050 },
+      { "income": 379205000, "cost": 231944379 },
+      { "income": 306849000, "cost": 197502571 },
+      { "income": 400486000, "cost": 135392470 },
+      { "income": 407832000, "cost": 233173384 }
+    ],
+    "soonToExpireProducts": [
+      {
+        "category": "Dairy",
+        "products": [
+          {
+            "id": 1897,
+            "name": "Dalat Pure Fresh Milk 110ml",
+            "quantity": 84,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 503,
+            "name": "Teama UHT milk cheese 120gr",
+            "quantity": 59,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Dutch Lady condense milk 380gr",
+            "quantity": 44,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Eco Soy milk 240ml",
+            "quantity": 37,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Sahmyook nut milk 950ml",
+            "quantity": 25,
+            "date": "05/03/2023"
+          }
+        ]
+      },
+      {
+        "category": "Instant Food",
+        "products": [
+          {
+            "id": 85,
+            "name": "A-One Pork Flavor Instant Noodle 85gr",
+            "quantity": 93,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 23,
+            "name": "GauDo instant chicken porridge 50gr",
+            "quantity": 87,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 69,
+            "name": "Libra rice noodle 500gr",
+            "quantity": 75,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Vinaly macaroni 400gr",
+            "quantity": 23,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Frozen Food",
+        "products": [
+          {
+            "id": 894,
+            "name": "G Kitchen sausage 475gr",
+            "quantity": 64,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 785,
+            "name": "La Cusina German sausage 500gr",
+            "quantity": 46,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 488,
+            "name": "Le Gourmet bacon 200gr",
+            "quantity": 32,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Bibigo seafood mandu 175gr",
+            "quantity": 12,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Sweets",
+        "totalQuant": 154,
+        "products": [
+          {
+            "id": 266,
+            "name": "M&M's Mini tube 35gr",
+            "quantity": 42,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 213,
+            "name": "Hershey's Nuggets white chocolate 56gr",
+            "quantity": 38,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Deloba Bahlsen cookie 200gr",
+            "quantity": 29,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Tipo egg biscuit 250gr",
+            "quantity": 21,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Seasoning",
+        "products": [
+          {
+            "id": 655,
+            "name": "Chinsu salmon fish sauce 500ml",
+            "quantity": 94,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Remia mayonnaise 482gr",
+            "quantity": 71,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Heinz Big Red ketchup 950gr",
+            "quantity": 43,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 323,
+            "name": "Nam Duong soy sauce 210ml",
+            "quantity": 39,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 924,
+            "name": "Nakydaco cooking oil 1l",
+            "quantity": 17,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Beer & Soft Drink",
+        "products": [
+          {
+            "id": 723,
+            "name": "Fanta grape 320ml",
+            "quantity": 55,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Mirinda cream soda 320ml",
+            "quantity": 32,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Larue blue beer 330ml",
+            "quantity": 18,
+            "date": "08/04/2023"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "topProducts": [
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
+    ],
+    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "targetRevenue": 1000,
+    "week": 2,
+    "salesStats": [
+      { "income": 448022000, "cost": 152727133 },
+      { "income": 327842000, "cost": 156131121 },
+      { "income": 366672000, "cost": 108348540 },
+      { "income": 411490000, "cost": 179304394 },
+      { "income": 410678000, "cost": 193245854 },
+      { "income": 364163000, "cost": 243788820 },
+      { "income": 330609000, "cost": 183302992 }
+    ],
+    "soonToExpireProducts": [
+      {
+        "category": "Dairy",
+        "products": [
+          {
+            "id": 1897,
+            "name": "Dalat Pure Fresh Milk 110ml",
+            "quantity": 84,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 503,
+            "name": "Teama UHT milk cheese 120gr",
+            "quantity": 59,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Dutch Lady condense milk 380gr",
+            "quantity": 44,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Eco Soy milk 240ml",
+            "quantity": 37,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Sahmyook nut milk 950ml",
+            "quantity": 25,
+            "date": "05/03/2023"
+          }
+        ]
+      },
+      {
+        "category": "Instant Food",
+        "products": [
+          {
+            "id": 85,
+            "name": "A-One Pork Flavor Instant Noodle 85gr",
+            "quantity": 93,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 23,
+            "name": "GauDo instant chicken porridge 50gr",
+            "quantity": 87,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 69,
+            "name": "Libra rice noodle 500gr",
+            "quantity": 75,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Vinaly macaroni 400gr",
+            "quantity": 23,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Frozen Food",
+        "products": [
+          {
+            "id": 894,
+            "name": "G Kitchen sausage 475gr",
+            "quantity": 64,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 785,
+            "name": "La Cusina German sausage 500gr",
+            "quantity": 46,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 488,
+            "name": "Le Gourmet bacon 200gr",
+            "quantity": 32,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Bibigo seafood mandu 175gr",
+            "quantity": 12,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Sweets",
+        "totalQuant": 154,
+        "products": [
+          {
+            "id": 266,
+            "name": "M&M's Mini tube 35gr",
+            "quantity": 42,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 213,
+            "name": "Hershey's Nuggets white chocolate 56gr",
+            "quantity": 38,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Deloba Bahlsen cookie 200gr",
+            "quantity": 29,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Tipo egg biscuit 250gr",
+            "quantity": 21,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Seasoning",
+        "products": [
+          {
+            "id": 655,
+            "name": "Chinsu salmon fish sauce 500ml",
+            "quantity": 94,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Remia mayonnaise 482gr",
+            "quantity": 71,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Heinz Big Red ketchup 950gr",
+            "quantity": 43,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 323,
+            "name": "Nam Duong soy sauce 210ml",
+            "quantity": 39,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 924,
+            "name": "Nakydaco cooking oil 1l",
+            "quantity": 17,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Beer & Soft Drink",
+        "products": [
+          {
+            "id": 723,
+            "name": "Fanta grape 320ml",
+            "quantity": 55,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Mirinda cream soda 320ml",
+            "quantity": 32,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Larue blue beer 330ml",
+            "quantity": 18,
+            "date": "08/04/2023"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "topProducts": [
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
+      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
+    ],
+    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "targetRevenue": 1000,
+    "week": 3,
+    "salesStats": [
+      { "income": 360347000, "cost": 149230153 },
+      { "income": 423305000, "cost": 192917383 },
+      { "income": 329813000, "cost": 226203198 },
+      { "income": 368656000, "cost": 212847595 },
+      { "income": 433408000, "cost": 120517583 },
+      { "income": 437488000, "cost": 117304986 },
+      { "income": 346959000, "cost": 215479002 }
+    ],
+    "soonToExpireProducts": [
+      {
+        "category": "Dairy",
+        "products": [
+          {
+            "id": 1897,
+            "name": "Dalat Pure Fresh Milk 110ml",
+            "quantity": 84,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 503,
+            "name": "Teama UHT milk cheese 120gr",
+            "quantity": 59,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Dutch Lady condense milk 380gr",
+            "quantity": 44,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Eco Soy milk 240ml",
+            "quantity": 37,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 1778,
+            "name": "Sahmyook nut milk 950ml",
+            "quantity": 25,
+            "date": "05/03/2023"
+          }
+        ]
+      },
+      {
+        "category": "Instant Food",
+        "products": [
+          {
+            "id": 85,
+            "name": "A-One Pork Flavor Instant Noodle 85gr",
+            "quantity": 93,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 23,
+            "name": "GauDo instant chicken porridge 50gr",
+            "quantity": 87,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 69,
+            "name": "Libra rice noodle 500gr",
+            "quantity": 75,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Vinaly macaroni 400gr",
+            "quantity": 23,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Frozen Food",
+        "products": [
+          {
+            "id": 894,
+            "name": "G Kitchen sausage 475gr",
+            "quantity": 64,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 785,
+            "name": "La Cusina German sausage 500gr",
+            "quantity": 46,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 488,
+            "name": "Le Gourmet bacon 200gr",
+            "quantity": 32,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Bibigo seafood mandu 175gr",
+            "quantity": 12,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Sweets",
+        "totalQuant": 154,
+        "products": [
+          {
+            "id": 266,
+            "name": "M&M's Mini tube 35gr",
+            "quantity": 42,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 213,
+            "name": "Hershey's Nuggets white chocolate 56gr",
+            "quantity": 38,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Deloba Bahlsen cookie 200gr",
+            "quantity": 29,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 924,
+            "name": "Tipo egg biscuit 250gr",
+            "quantity": 21,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Seasoning",
+        "products": [
+          {
+            "id": 655,
+            "name": "Chinsu salmon fish sauce 500ml",
+            "quantity": 94,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Remia mayonnaise 482gr",
+            "quantity": 71,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Heinz Big Red ketchup 950gr",
+            "quantity": 43,
+            "date": "08/04/2023"
+          },
+          {
+            "id": 323,
+            "name": "Nam Duong soy sauce 210ml",
+            "quantity": 39,
+            "date": "28/02/2023"
+          },
+          {
+            "id": 924,
+            "name": "Nakydaco cooking oil 1l",
+            "quantity": 17,
+            "date": "28/02/2023"
+          }
+        ]
+      },
+      {
+        "category": "Beer & Soft Drink",
+        "products": [
+          {
+            "id": 723,
+            "name": "Fanta grape 320ml",
+            "quantity": 55,
+            "date": "17/03/2023"
+          },
+          {
+            "id": 432,
+            "name": "Mirinda cream soda 320ml",
+            "quantity": 32,
+            "date": "30/03/2023"
+          },
+          {
+            "id": 175,
+            "name": "Larue blue beer 330ml",
+            "quantity": 18,
+            "date": "08/04/2023"
+          }
+        ]
+      }
+    ]
+  }
+]
