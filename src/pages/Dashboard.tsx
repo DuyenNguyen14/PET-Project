@@ -12,10 +12,20 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SideNav from "../components/SideNav";
 import TotalIncome from "../layouts/TotalIncome";
 import SalesStats from "../layouts/SalesChart";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../redux/store";
+import {
+  setCost,
+  setIncome,
+  setPrevCost,
+  setPrevIncome,
+} from "../redux/reducers/salesReducer";
+import TotalCost from "../layouts/TotalCost";
+import Revenue from "../layouts/Revenue";
 
 type Props = {};
 
@@ -43,6 +53,17 @@ export default function Dashboard({}: Props) {
   const handleChange = (e: SelectChangeEvent) => {
     setWeek(e.target.value as string);
   };
+
+  const dispatch: AppDispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setIncome(week));
+    dispatch(setCost(week));
+
+    let prevWeek = parseInt(week) + 1;
+    dispatch(setPrevIncome(prevWeek.toString()));
+    dispatch(setPrevCost(prevWeek.toString()));
+  }, [week]);
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -90,10 +111,14 @@ export default function Dashboard({}: Props) {
                 </Item>
               </Grid>
               <Grid item xs={6}>
-                <Item>xs=5</Item>
+                <Item>
+                  <TotalCost week={week} />
+                </Item>
               </Grid>
               <Grid item xs={12}>
-                <Item>xs=5</Item>
+                <Item>
+                  <Revenue />
+                </Item>
               </Grid>
             </Grid>
           </Grid>

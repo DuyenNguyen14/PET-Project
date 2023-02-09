@@ -1,28 +1,32 @@
 import { Divider } from "@mui/material";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
-import { setCost, setIncome } from "../redux/reducers/salesReducer";
 
 type Props = { week: string };
 
 export default function SalesChart({ week }: Props) {
   const { income, cost } = useSelector((state: RootState) => state.sales);
-  console.log({ income });
-  console.log({ cost });
+  const [incomeArr, setIncomeArr] = useState<number[]>([]);
+  const [costArr, setCostArr] = useState<number[]>([]);
+  const currentWeek = useRef("1");
 
   const incomeArrayLocaled =
-    income.length === 7 && income.map((value) => value / 1000);
+    incomeArr.length === 7 && incomeArr.map((value) => value / 1000);
 
   const costArrayLocaled =
-    cost.length === 7 && cost.map((value) => value / 1000);
+    costArr.length === 7 && costArr.map((value) => value / 1000);
 
   const rosArray = () => {
-    if (income.length > 0 && cost.length > 0 && income.length === cost.length) {
-      return income.map((value, index) =>
-        (((value - cost[index]) * 100) / value).toFixed(2)
+    if (
+      incomeArr.length > 0 &&
+      costArr.length > 0 &&
+      incomeArr.length === costArr.length
+    ) {
+      return incomeArr.map((value, index) =>
+        (((value - costArr[index]) * 100) / value).toFixed(2)
       );
     }
   };
@@ -90,19 +94,25 @@ export default function SalesChart({ week }: Props) {
     ],
   };
 
-  const dispatch = useDispatch();
+  useEffect(() => {
+    if (week !== currentWeek.current) {
+      currentWeek.current = week;
+    }
+  }, [week]);
 
   useEffect(() => {
-    dispatch(setIncome(week));
-    dispatch(setCost(week));
-  }, [week]);
+    if (income.length > 0 && cost.length > 0) {
+      setIncomeArr(income);
+      setCostArr(cost);
+    }
+  }, [income.length, cost.length, currentWeek.current]);
 
   return (
     <>
       <CardTitle>Income & Cost in 7 days</CardTitle>
       <Divider />
       <CardText>
-        {income.length === 7 && cost.length === 7 && (
+        {incomeArr.length === 7 && costArr.length === 7 && (
           <ReactECharts option={option} />
         )}
       </CardText>

@@ -6,8 +6,8 @@ import ReactECharts from "echarts-for-react";
 
 type Props = { week: string };
 
-export default function TotalIncome({ week }: Props) {
-  const { income, prevIncome } = useSelector((state: RootState) => state.sales);
+export default function TotalCost({ week }: Props) {
+  const { cost, prevCost } = useSelector((state: RootState) => state.sales);
 
   const option = {
     xAxis: {
@@ -17,20 +17,20 @@ export default function TotalIncome({ week }: Props) {
     },
     yAxis: {
       show: false,
-      min: 250000000,
-      max: 500000000,
+      min: 100000000,
+      max: 350000000,
     },
     series: [
       {
         showSymbol: false,
         type: "line",
-        data: income.length === 7 && income,
-        color: "#FF7E41",
+        data: cost.length === 7 && cost,
+        color: "#676E8A",
       },
       {
         showSymbol: false,
         type: "line",
-        data: prevIncome.length === 7 && prevIncome,
+        data: prevCost.length === 7 && prevCost,
         color: "#676e8a91",
         lineStyle: {
           type: "dashed",
@@ -41,15 +41,15 @@ export default function TotalIncome({ week }: Props) {
 
   return (
     <>
-      <CardTitle>Total Income</CardTitle>
+      <CardTitle>Total Cost</CardTitle>
       <Divider />
       <CardText>
         <Typography
           component="span"
           sx={{ fontWeight: "700", fontSize: "18px", color: "#000" }}
         >
-          {income.length === 7 &&
-            income.reduce((a, b) => a + b, 0).toLocaleString("vi")}{" "}
+          {cost.length === 7 &&
+            cost.reduce((a, b) => a + b, 0).toLocaleString("vi")}{" "}
         </Typography>
         <Typography component="span">vnd</Typography>
         <Box>
