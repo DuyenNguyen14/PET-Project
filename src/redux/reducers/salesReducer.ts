@@ -50,7 +50,6 @@ const dashboardReducer = createSlice({
   },
 });
 
-export const { setPrevIncome, setIncome, setPrevCost, setCost } =
-  dashboardReducer.actions;
+export const { setPrevIncome, setIncome, setPrevCost, setCost } = dashboardReducer.actions;
 
 export default dashboardReducer.reducer;
