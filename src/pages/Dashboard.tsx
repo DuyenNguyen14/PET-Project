@@ -12,13 +12,13 @@ import Revenue from "../components/Revenue";
 import TotalIncome from "../components/TotalIncome";
 import TotalCost from "../components/TotalCost";
 import SalesChart from "../components/SalesChart";
+import TopProducts from "../components/TopProducts/TopProducts";
 
 type Props = { week: string };
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
-  // padding: "16px 32px",
   color: theme.palette.text.secondary,
   border: "1px solid #D9D9D9",
   borderRadius: "8px",
@@ -34,30 +34,35 @@ export default function Dashboard({ week }: Props) {
   }, [week]);
 
   return (
-    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+    <Box sx={{ flexGrow: 1, p: 3 }}>
       <Grid container spacing={4}>
-        <Grid item xs={5}>
+        <Grid item lg={5}>
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item lg={6}>
               <Item>
                 <TotalIncome />
               </Item>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item lg={6}>
               <Item>
                 <TotalCost />
               </Item>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item lg={12}>
               <Item>
                 <Revenue />
               </Item>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item lg={7}>
           <Item>
             <SalesChart />
+          </Item>
+        </Grid>
+        <Grid item lg={5}>
+          <Item>
+            <TopProducts />
           </Item>
         </Grid>
       </Grid>

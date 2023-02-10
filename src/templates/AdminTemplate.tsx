@@ -40,7 +40,6 @@ export default function AdminTemplate({}: Props) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            marginBottom: "22px",
           }}
         >
           <Breadcrumbs aria-label="breadcrumb">

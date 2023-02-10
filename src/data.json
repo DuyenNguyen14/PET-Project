@@ -3,23 +3,37 @@
     "week": 1,
     "topProducts": [
       {
+        "id": 7765,
         "name": "TH true MILK UHT Pure Fresh Milk (180ml)",
+        "img": "https://www.thmilk.vn/wp-content/uploads/2019/11/UHT-1l-NC-800x800-1.png",
         "quantity": 2508,
         "earned": 91040400
       },
       {
+        "id": 9328,
         "name": "TH true MILK Organic 500ml",
+        "img": "https://cdn.tgdd.vn/Products/Images/2386/132222/bhx/sua-tuoi-tiet-trung-nguyen-chat-th-true-milk-organic-hop-500ml-202104100135248400.jpg",
         "quantity": 735,
         "earned": 23887500
       },
-      { "name": "C.P Pork 500gr", "quantity": 198, "earned": 18612000 },
       {
+        "id": 2681,
+        "img": "https://cdn.tgdd.vn/Products/Images/8781/228329/bhx/ba-roi-heo-cp-khay-500g-202202111520572889.jpg",
+        "name": "C.P Pork 500gr",
+        "quantity": 198,
+        "earned": 18612000
+      },
+      {
+        "id": 5675,
         "name": "HaoHao Instant Noodle (75gr*30)",
+        "img": "https://cdn.tgdd.vn/Products/Images/2565/85959/bhx/thung-30-goi-mi-hao-hao-tom-chua-cay-75g-202211181144401243.jpg",
         "quantity": 125,
         "earned": 14750000
       },
       {
+        "id": 4647,
         "name": "Neptune Light Cooking Oil (1l)",
+        "img": "https://cdn.tgdd.vn/Products/Images/2286/226995/bhx/dau-an-thuong-hang-neptune-light-chai-1-lit-202212031020029576.png",
         "quantity": 338,
         "earned": 14534000
       }
@@ -220,9 +234,42 @@
   },
   {
     "topProducts": [
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
+      {
+        "id": 1997,
+        "name": "Dutch Lady Canxi & Protein 180ml",
+        "img": "https://cdn.tgdd.vn/Products/Images/2386/241457/bhx/thung-24-bich-sua-tuoi-tiet-trung-it-duong-dutch-lady-canxi-protein-180ml-202107010808282582.jpg",
+        "quantity": 6485,
+        "earned": 74577500
+      },
+      {
+        "id": 5847,
+        "name": "Jox minies mix 120gr",
+        "img": "https://cdn.tgdd.vn/Products/Images/2687/256913/bhx/keo-jox-minies-mix-goi-120g-202111161954104619.jpg",
+
+        "quantity": 1692,
+        "earned": 32486400
+      },
+      {
+        "id": 8150,
+        "name": "Heineken Sleek 330ml x 24",
+        "img": "https://cdn.tgdd.vn/Products/Images/2282/148787/bhx/thung-24-lon-bia-heineken-sleek-330ml-202103162246425731.jpg",
+        "quantity": 67,
+        "earned": 28810000
+      },
+      {
+        "id": 9220,
+        "name": "Coca Cola 390ml x 6",
+        "img": "https://cdn.tgdd.vn/Products/Images/2443/88651/bhx/6-chai-nuoc-ngot-coca-cola-390ml-202212271004045868.jpg",
+        "quantity": 533,
+        "earned": 17589000
+      },
+      {
+        "id": 9704,
+        "name": "Maggi fish sauce 490ml",
+        "img": "https://www.thmilk.vn/wp-content/uploads/2019/11/UHT-1l-NC-800x800-1.png",
+        "quantity": 184,
+        "earned": 12236000
+      }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
     "targetRevenue": 1500000000,
@@ -421,9 +468,41 @@
   },
   {
     "topProducts": [
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 },
-      { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
+      {
+        "id": 1997,
+        "name": "Dutch Lady Canxi & Protein 180ml",
+        "img": "https://cdn.tgdd.vn/Products/Images/2386/241457/bhx/thung-24-bich-sua-tuoi-tiet-trung-it-duong-dutch-lady-canxi-protein-180ml-202107010808282582.jpg",
+        "quantity": 6485,
+        "earned": 74577500
+      },
+      {
+        "id": 5847,
+        "name": "Chinsu chilli sauce 500gr",
+        "img": "https://cdn.tgdd.vn/Products/Images/2567/213563/bhx/tuong-ot-chinsu-chai-500g-201911011615532253.jpg",
+        "quantity": 1692,
+        "earned": 32486400
+      },
+      {
+        "id": 8150,
+        "name": "Hershey's creamy milk chocolate 40gr",
+        "img": "https://cdn.tgdd.vn/Products/Images/6597/153751/bhx/socola-kem-sua-hersheys-goi-40g-201909271609210262.jpg",
+        "quantity": 67,
+        "earned": 28810000
+      },
+      {
+        "id": 9220,
+        "name": "GauDo instant noodle chicken flavour 63gr",
+        "img": "https://cdn.tgdd.vn/Products/Images/2565/86006/bhx/thung-30-goi-mi-ga-soi-pho-gau-do-63g-202209282347426163.jpg",
+        "quantity": 533,
+        "earned": 17589000
+      },
+      {
+        "id": 9704,
+        "name": "Maggi fish sauce 490ml",
+        "img": "https://www.thmilk.vn/wp-content/uploads/2019/11/UHT-1l-NC-800x800-1.png",
+        "quantity": 184,
+        "earned": 12236000
+      }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
     "targetRevenue": 1500000000,
@@ -624,25 +703,40 @@
     "week": 4,
     "topProducts": [
       {
-        "name": "TH true MILK UHT Pure Fresh Milk (180ml)",
-        "quantity": 2508,
-        "earned": 91040400
+        "id": 1997,
+        "name": "Dutch Lady Canxi & Protein 180ml",
+        "img": "https://cdn.tgdd.vn/Products/Images/2386/241457/bhx/thung-24-bich-sua-tuoi-tiet-trung-it-duong-dutch-lady-canxi-protein-180ml-202107010808282582.jpg",
+        "quantity": 6485,
+        "earned": 74577500
       },
       {
-        "name": "TH true MILK Organic 500ml",
-        "quantity": 735,
-        "earned": 23887500
-      },
-      { "name": "C.P Pork 500gr", "quantity": 198, "earned": 18612000 },
-      {
-        "name": "HaoHao Instant Noodle (75gr*30)",
-        "quantity": 125,
-        "earned": 14750000
+        "id": 5847,
+        "name": "Jox minies mix 120gr",
+        "img": "https://cdn.tgdd.vn/Products/Images/2687/256913/bhx/keo-jox-minies-mix-goi-120g-202111161954104619.jpg",
+
+        "quantity": 1692,
+        "earned": 32486400
       },
       {
-        "name": "Neptune Light Cooking Oil (1l)",
-        "quantity": 338,
-        "earned": 14534000
+        "id": 8150,
+        "name": "Heineken Sleek 330ml x 24",
+        "img": "https://cdn.tgdd.vn/Products/Images/2282/148787/bhx/thung-24-lon-bia-heineken-sleek-330ml-202103162246425731.jpg",
+        "quantity": 67,
+        "earned": 28810000
+      },
+      {
+        "id": 9220,
+        "name": "Coca Cola 390ml x 6",
+        "img": "https://cdn.tgdd.vn/Products/Images/2443/88651/bhx/6-chai-nuoc-ngot-coca-cola-390ml-202212271004045868.jpg",
+        "quantity": 533,
+        "earned": 17589000
+      },
+      {
+        "id": 9704,
+        "name": "Maggi fish sauce 490ml",
+        "img": "https://www.thmilk.vn/wp-content/uploads/2019/11/UHT-1l-NC-800x800-1.png",
+        "quantity": 184,
+        "earned": 12236000
       }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
