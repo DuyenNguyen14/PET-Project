@@ -13,6 +13,7 @@ import TotalIncome from "../components/TotalIncome";
 import TotalCost from "../components/TotalCost";
 import SalesChart from "../components/SalesChart";
 import TopProducts from "../components/TopProducts/TopProducts";
+import { setTopProducts } from "../redux/reducers/productReducer";
 
 type Props = { week: string };
 
@@ -31,6 +32,7 @@ export default function Dashboard({ week }: Props) {
     dispatch(setIncome(week));
     dispatch(setCost(week));
     dispatch(setTargetRevenue(week));
+    dispatch(setTopProducts(week));
   }, [week]);
 
   return (
