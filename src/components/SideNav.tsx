@@ -111,7 +111,6 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function SideNav({}: Props) {
-  const theme = useTheme();
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {

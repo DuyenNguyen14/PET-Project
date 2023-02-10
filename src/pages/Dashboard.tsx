@@ -1,21 +1,6 @@
-import {
-  Box,
-  Breadcrumbs,
-  CssBaseline,
-  FormControl,
-  Grid,
-  Link,
-  MenuItem,
-  Paper,
-  Select,
-  SelectChangeEvent,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useEffect, useState } from "react";
-import SideNav from "../components/SideNav";
-import TotalIncome from "../layouts/TotalIncome";
-import SalesStats from "../layouts/SalesChart";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import {
@@ -23,19 +8,12 @@ import {
   setIncome,
   setTargetRevenue,
 } from "../redux/reducers/salesReducer";
-import TotalCost from "../layouts/TotalCost";
-import Revenue from "../layouts/Revenue";
+import Revenue from "../components/Revenue";
+import TotalIncome from "../components/TotalIncome";
+import TotalCost from "../components/TotalCost";
+import SalesChart from "../components/SalesChart";
 
-type Props = {};
-
-const ContentHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-end",
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
+type Props = { week: string };
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -46,13 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
   borderRadius: "8px",
 }));
 
-export default function Dashboard({}: Props) {
-  const [week, setWeek] = useState("1");
-
-  const handleChange = (e: SelectChangeEvent) => {
-    setWeek(e.target.value as string);
-  };
-
+export default function Dashboard({ week }: Props) {
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
@@ -62,69 +34,33 @@ export default function Dashboard({}: Props) {
   }, [week]);
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <SideNav />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <ContentHeader />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "22px",
-          }}
-        >
-          <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="GrayText" href="#">
-              Main
-            </Link>
-            <Link underline="hover" color="inherit" href="#">
-              Dashboard
-            </Link>
-          </Breadcrumbs>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Box>
-              <Typography component="p">Data shown by:</Typography>
-            </Box>
-            <Box sx={{ minWidth: 120, marginLeft: "5px" }}>
-              <FormControl size="small" fullWidth>
-                <Select value={week} onChange={handleChange}>
-                  <MenuItem value={1}>Week 1</MenuItem>
-                  <MenuItem value={2}>Week 2</MenuItem>
-                  <MenuItem value={3}>Week 3</MenuItem>
-                </Select>
-              </FormControl>
-            </Box>
-          </Box>
-        </Box>
-        <Grid container spacing={4}>
-          <Grid item xs={5}>
-            <Grid container spacing={3}>
-              <Grid item xs={6}>
-                <Item>
-                  <TotalIncome />
-                </Item>
-              </Grid>
-              <Grid item xs={6}>
-                <Item>
-                  <TotalCost />
-                </Item>
-              </Grid>
-              <Grid item xs={12}>
-                <Item>
-                  <Revenue />
-                </Item>
-              </Grid>
+    <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Grid container spacing={4}>
+        <Grid item xs={5}>
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              <Item>
+                <TotalIncome />
+              </Item>
+            </Grid>
+            <Grid item xs={6}>
+              <Item>
+                <TotalCost />
+              </Item>
+            </Grid>
+            <Grid item xs={12}>
+              <Item>
+                <Revenue />
+              </Item>
             </Grid>
           </Grid>
-          <Grid item xs={7}>
-            <Item>
-              <SalesStats />
-            </Item>
-          </Grid>
         </Grid>
-      </Box>
+        <Grid item xs={7}>
+          <Item>
+            <SalesChart />
+          </Item>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
