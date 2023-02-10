@@ -25,7 +25,7 @@
       }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
-    "targetRevenue": 1000,
+    "targetRevenue": 1500000000,
     "income": [
       323755000, 375663000, 395068000, 379205000, 306849000, 400486000,
       407832000
@@ -225,7 +225,7 @@
       { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
-    "targetRevenue": 1000,
+    "targetRevenue": 1500000000,
     "week": 2,
     "income": [
       448022000, 327842000, 366672000, 411490000, 410678000, 364163000,
@@ -426,7 +426,7 @@
       { "name": "TH True Milk", "quantity": 1000, "earned": 1000 }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
-    "targetRevenue": 1000,
+    "targetRevenue": 1500000000,
     "week": 3,
     "income": [
       360347000, 423305000, 329813000, 368656000, 433408000, 437488000,
@@ -646,7 +646,7 @@
       }
     ],
     "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
-    "targetRevenue": 1000,
+    "targetRevenue": 1500000000,
     "income": [
       323755000, 375663000, 395068000, 379205000, 306849000, 400486000,
       407832000

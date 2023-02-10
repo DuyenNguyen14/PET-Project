@@ -18,7 +18,11 @@ import TotalIncome from "../layouts/TotalIncome";
 import SalesStats from "../layouts/SalesChart";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { setCost, setIncome } from "../redux/reducers/salesReducer";
+import {
+  setCost,
+  setIncome,
+  setTargetRevenue,
+} from "../redux/reducers/salesReducer";
 import TotalCost from "../layouts/TotalCost";
 import Revenue from "../layouts/Revenue";
 
@@ -54,6 +58,7 @@ export default function Dashboard({}: Props) {
   useEffect(() => {
     dispatch(setIncome(week));
     dispatch(setCost(week));
+    dispatch(setTargetRevenue(week));
   }, [week]);
 
   return (
@@ -85,9 +90,9 @@ export default function Dashboard({}: Props) {
             <Box sx={{ minWidth: 120, marginLeft: "5px" }}>
               <FormControl size="small" fullWidth>
                 <Select value={week} onChange={handleChange}>
-                  <MenuItem value={1}>This week</MenuItem>
-                  <MenuItem value={2}>2</MenuItem>
-                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={1}>Week 1</MenuItem>
+                  <MenuItem value={2}>Week 2</MenuItem>
+                  <MenuItem value={3}>Week 3</MenuItem>
                 </Select>
               </FormControl>
             </Box>

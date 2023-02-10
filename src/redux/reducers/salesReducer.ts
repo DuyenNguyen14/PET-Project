@@ -10,6 +10,7 @@ type InitialState = {
     current: number[];
     previous: number[];
   };
+  targetRevenue: number;
 };
 
 const initialState: InitialState = {
@@ -21,6 +22,7 @@ const initialState: InitialState = {
     current: [],
     previous: [],
   },
+  targetRevenue: 0,
 };
 
 const dashboardReducer = createSlice({
@@ -51,9 +53,18 @@ const dashboardReducer = createSlice({
         }
       }
     },
+    setTargetRevenue: (state: InitialState, action: PayloadAction<string>) => {
+      let currWeek = parseInt(action.payload);
+      for (const data of myData) {
+        if (currWeek === data.week) {
+          state.targetRevenue = data.targetRevenue;
+        }
+      }
+    },
   },
 });
 
-export const { setIncome, setCost } = dashboardReducer.actions;
+export const { setIncome, setCost, setTargetRevenue } =
+  dashboardReducer.actions;
 
 export default dashboardReducer.reducer;

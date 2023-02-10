@@ -101,7 +101,7 @@ export default function SalesChart({}: Props) {
       <Divider />
       <CardText>
         {income.current.length === 7 && cost.current.length === 7 && (
-          <ReactECharts option={option} />
+          <ReactECharts option={option} style={{ height: "339px" }} />
         )}
       </CardText>
     </>
