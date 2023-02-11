@@ -144,7 +144,6 @@
       },
       {
         "category": "Sweets",
-        "totalQuant": 154,
         "products": [
           {
             "id": 266,
@@ -284,93 +283,93 @@
     ],
     "soonToExpireProducts": [
       {
-        "category": "Dairy",
+        "category": "Seasoning",
         "products": [
           {
             "id": 1897,
-            "name": "Dalat Pure Fresh Milk 110ml",
+            "name": "TSU Family high quality white sugar 1kg",
             "quantity": 84,
             "date": "17/03/2023"
           },
           {
             "id": 503,
-            "name": "Teama UHT milk cheese 120gr",
+            "name": "Sosal Group pure salt 1kg",
             "quantity": 59,
             "date": "30/03/2023"
           },
           {
             "id": 1778,
-            "name": "Dutch Lady condense milk 380gr",
+            "name": "Kewpie mayonnaise 130gr",
             "quantity": 44,
             "date": "08/04/2023"
           },
           {
             "id": 924,
-            "name": "Eco Soy milk 240ml",
+            "name": "Hong Hanh fish sauce 4,5l",
             "quantity": 37,
             "date": "28/02/2023"
           },
           {
             "id": 1778,
-            "name": "Sahmyook nut milk 950ml",
+            "name": "Lien Thanh soy sauce 1,8l",
             "quantity": 25,
             "date": "05/03/2023"
           }
         ]
       },
       {
-        "category": "Instant Food",
+        "category": "Dry Food",
         "products": [
           {
             "id": 85,
-            "name": "A-One Pork Flavor Instant Noodle 85gr",
+            "name": "Neptune ST25 rice 5kg",
             "quantity": 93,
             "date": "17/03/2023"
           },
           {
             "id": 23,
-            "name": "GauDo instant chicken porridge 50gr",
+            "name": "Dali Food chocolate pancake batter 200gr",
             "quantity": 87,
             "date": "30/03/2023"
           },
           {
             "id": 69,
-            "name": "Libra rice noodle 500gr",
+            "name": "Pinku Oji pork sausage 175gr",
             "quantity": 75,
             "date": "08/04/2023"
           },
           {
             "id": 924,
-            "name": "Vinaly macaroni 400gr",
+            "name": "Bich Chi vegeterian cup noodle 50gr",
             "quantity": 23,
             "date": "28/02/2023"
           }
         ]
       },
       {
-        "category": "Frozen Food",
+        "category": "Dairy",
         "products": [
           {
             "id": 894,
-            "name": "G Kitchen sausage 475gr",
+            "name": "YoMost strawberry 170ml",
             "quantity": 64,
             "date": "17/03/2023"
           },
           {
             "id": 785,
-            "name": "La Cusina German sausage 500gr",
+            "name": "LiF corn milk 180ml",
             "quantity": 46,
             "date": "30/03/2023"
           },
           {
             "id": 488,
-            "name": "Le Gourmet bacon 200gr",
+            "name": "Milo wheat milk 180ml",
             "quantity": 32,
             "date": "08/04/2023"
           },
           {
             "id": 924,
-            "name": "Bibigo seafood mandu 175gr",
+            "name": "Nutimilk condense cream 380gr",
             "quantity": 12,
             "date": "28/02/2023"
           }
@@ -378,7 +377,6 @@
       },
       {
         "category": "Sweets",
-        "totalQuant": 154,
         "products": [
           {
             "id": 266,
@@ -407,35 +405,35 @@
         ]
       },
       {
-        "category": "Seasoning",
+        "category": "Pet",
         "products": [
           {
             "id": 655,
-            "name": "Chinsu salmon fish sauce 500ml",
+            "name": "Pedigree beef and vegetable dog food 1.5kg",
             "quantity": 94,
             "date": "17/03/2023"
           },
           {
             "id": 432,
-            "name": "Remia mayonnaise 482gr",
+            "name": "Natural Core chicken and salmon dog food 400gr",
             "quantity": 71,
             "date": "30/03/2023"
           },
           {
             "id": 175,
-            "name": "Heinz Big Red ketchup 950gr",
+            "name": "Whiskas sea fish pate for cat 80gr",
             "quantity": 43,
             "date": "08/04/2023"
           },
           {
             "id": 323,
-            "name": "Nam Duong soy sauce 210ml",
+            "name": "Minino seafood flavour cat food 1.5kg",
             "quantity": 39,
             "date": "28/02/2023"
           },
           {
             "id": 924,
-            "name": "Nakydaco cooking oil 1l",
+            "name": "Lapaw lavender litter sand for cat 8kg",
             "quantity": 17,
             "date": "28/02/2023"
           }
@@ -611,7 +609,6 @@
       },
       {
         "category": "Sweets",
-        "totalQuant": 154,
         "products": [
           {
             "id": 266,
@@ -845,7 +842,6 @@
       },
       {
         "category": "Sweets",
-        "totalQuant": 154,
         "products": [
           {
             "id": 266,
