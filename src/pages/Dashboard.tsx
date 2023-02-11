@@ -14,6 +14,9 @@ import TotalCost from "../components/TotalCost";
 import SalesChart from "../components/SalesChart";
 import TopProducts from "../components/TopProducts/TopProducts";
 import { setTopProducts } from "../redux/reducers/productReducer";
+import CustomerRatings from "../components/CustomerRatings/CustomerRatings";
+import { setRatings } from "../redux/reducers/ratingsReducer";
+import ExpiredProducts from "../components/ExpiredProducts/ExpiredProducts";
 
 type Props = { week: string };
 
@@ -33,6 +36,7 @@ export default function Dashboard({ week }: Props) {
     dispatch(setCost(week));
     dispatch(setTargetRevenue(week));
     dispatch(setTopProducts(week));
+    dispatch(setRatings(week));
   }, [week]);
 
   return (
@@ -65,6 +69,16 @@ export default function Dashboard({ week }: Props) {
         <Grid item lg={5}>
           <Item>
             <TopProducts />
+          </Item>
+        </Grid>
+        <Grid item lg={7}>
+          <Item>
+            <CustomerRatings />
+          </Item>
+        </Grid>
+        <Grid item lg={12}>
+          <Item>
+            <ExpiredProducts />
           </Item>
         </Grid>
       </Grid>

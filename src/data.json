@@ -38,7 +38,7 @@
         "earned": 14534000
       }
     ],
-    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "ratings": { "excellent": 75, "good": 10, "notBad": 12, "bad": 3 },
     "targetRevenue": 1500000000,
     "income": [
       323755000, 375663000, 395068000, 379205000, 306849000, 400486000,
@@ -271,7 +271,7 @@
         "earned": 12236000
       }
     ],
-    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "ratings": { "excellent": 55, "good": 25, "notBad": 15, "bad": 5 },
     "targetRevenue": 1500000000,
     "week": 2,
     "income": [
@@ -504,7 +504,7 @@
         "earned": 12236000
       }
     ],
-    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "ratings": { "excellent": 85, "good": 10, "notBad": 3, "bad": 2 },
     "targetRevenue": 1500000000,
     "week": 3,
     "income": [
@@ -739,7 +739,7 @@
         "earned": 12236000
       }
     ],
-    "ratings": { "excellent": 0.75, "good": 0.1, "notBad": 0.12, "bad": 0.03 },
+    "ratings": { "excellent": 45, "good": 30, "notBad": 20, "bad": 5 },
     "targetRevenue": 1500000000,
     "income": [
       323755000, 375663000, 395068000, 379205000, 306849000, 400486000,
