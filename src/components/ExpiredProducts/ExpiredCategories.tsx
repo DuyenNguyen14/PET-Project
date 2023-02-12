@@ -1,11 +1,11 @@
-import { Divider } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import { Box, Button, Divider, IconButton } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import { CardText, CardTitle } from "../../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import ExpiredProducts from "./ExpiredProducts";
-import { SoonToExpireProducts } from "../../redux/reducers/productReducer";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 type EventParams = {
   // The component name clicked,
@@ -42,12 +42,18 @@ export default function ExpiredCategories({ week }: Props) {
     (state: RootState) => state.products
   );
   const [categoryName, setCategoryName] = useState<null | string>(null);
+  const [goBack, setGoBack] = useState(false);
   const currWeek = useRef("1");
 
   const onEvents = {
     click: (params: EventParams) => {
       setCategoryName(params.name);
+      setGoBack(true);
     },
+  };
+
+  const handleGoBack = () => {
+    setGoBack(false);
   };
 
   const option = {
@@ -78,9 +84,11 @@ export default function ExpiredCategories({ week }: Props) {
       {
         data:
           soonToExpireProducts.length > 0 &&
-          soonToExpireProducts.map((category) =>
-            category.products.reduce((sum, prod) => sum + prod.quantity, 0)
-          ),
+          soonToExpireProducts
+            .map((category) =>
+              category.products.reduce((sum, prod) => sum + prod.quantity, 0)
+            )
+            .sort((a, b) => b - a),
         type: "bar",
         itemStyle: {
           color: "#F46180",
@@ -101,14 +109,24 @@ export default function ExpiredCategories({ week }: Props) {
       <CardTitle>Soon to be expired products</CardTitle>
       <Divider />
       <CardText sx={{ height: "450px" }}>
-        {!categoryName ? (
+        {!goBack ? (
           <ReactECharts
             option={option}
             style={{ height: "420px" }}
             onEvents={onEvents}
           />
         ) : (
-          <ExpiredProducts categoryName={categoryName} />
+          categoryName &&
+          goBack && (
+            <Box>
+              <Button onClick={handleGoBack}>
+                <IconButton aria-label="go-back">
+                  <ArrowBackIosNewIcon />
+                </IconButton>
+              </Button>
+              <ExpiredProducts categoryName={categoryName} />
+            </Box>
+          )
         )}
       </CardText>
     </>

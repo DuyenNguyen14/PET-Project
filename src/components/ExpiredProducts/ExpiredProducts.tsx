@@ -1,12 +1,9 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
 import ReactECharts from "echarts-for-react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import {
-  SoonToExpireProduct,
-  SoonToExpireProducts,
-} from "../../redux/reducers/productReducer";
+import { SoonToExpireProducts } from "../../redux/reducers/productReducer";
+import ExpiredProductsTable from "./ExpiredProductsTable";
 
 type Props = { categoryName: string };
 
@@ -22,7 +19,12 @@ export default function ExpiredProducts({ categoryName }: Props) {
   const { products } = arrProducts as SoonToExpireProducts;
 
   const option = {
-    tooltip: {},
+    tooltip: {
+      trigger: "axis",
+      axisPointer: {
+        type: "shadow",
+      },
+    },
     xAxis: {
       value: "category",
       data: products?.map((prod) => prod.name),
@@ -43,7 +45,7 @@ export default function ExpiredProducts({ categoryName }: Props) {
     },
     series: [
       {
-        data: products?.map((prod) => prod.quantity),
+        data: products?.map((prod) => prod.quantity).sort((a, b) => b - a),
         type: "bar",
         itemStyle: {
           color: "#F46180",
@@ -57,7 +59,18 @@ export default function ExpiredProducts({ categoryName }: Props) {
       <Grid item lg={7}>
         <ReactECharts option={option} style={{ height: "100%" }} />
       </Grid>
-      <Grid item lg={5}></Grid>
+      <Grid item lg={5}>
+        <Box
+          sx={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <ExpiredProductsTable rows={products} />
+        </Box>
+      </Grid>
     </Grid>
   );
 }
