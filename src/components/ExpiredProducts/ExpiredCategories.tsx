@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import ExpiredProducts from "./ExpiredProducts";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { styled } from "@mui/material/styles";
 
 type EventParams = {
   // The component name clicked,
@@ -32,6 +33,8 @@ type EventParams = {
   // color of the shape, works when componentType is 'series'.
   color: string;
 };
+
+const GoBackButton = styled(IconButton)();
 
 type Props = {
   week: string;
@@ -101,6 +104,7 @@ export default function ExpiredCategories({ week }: Props) {
     if (week !== currWeek.current) {
       currWeek.current = week;
       setCategoryName(null);
+      setGoBack(false);
     }
   }, [week]);
 
@@ -119,11 +123,9 @@ export default function ExpiredCategories({ week }: Props) {
           categoryName &&
           goBack && (
             <Box>
-              <Button onClick={handleGoBack}>
-                <IconButton aria-label="go-back">
-                  <ArrowBackIosNewIcon />
-                </IconButton>
-              </Button>
+              <GoBackButton onClick={handleGoBack} aria-label="go-back">
+                <ArrowBackIosNewIcon />
+              </GoBackButton>
               <ExpiredProducts categoryName={categoryName} />
             </Box>
           )

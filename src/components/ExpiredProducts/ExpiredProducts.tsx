@@ -40,7 +40,7 @@ export default function ExpiredProducts({ categoryName }: Props) {
     },
     grid: {
       top: 50,
-      bottom: 80,
+      bottom: 55,
       left: 40,
     },
     series: [
@@ -56,10 +56,10 @@ export default function ExpiredProducts({ categoryName }: Props) {
 
   return (
     <Grid container spacing={2} sx={{ height: "100%" }}>
-      <Grid item lg={7}>
+      <Grid item md={7}>
         <ReactECharts option={option} style={{ height: "100%" }} />
       </Grid>
-      <Grid item lg={5}>
+      <Grid item md={5}>
         <Box
           sx={{
             height: "100%",

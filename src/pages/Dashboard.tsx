@@ -1,4 +1,4 @@
-import { Box, Grid, Paper } from "@mui/material";
+import { Box, Grid, Paper, useMediaQuery } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -32,6 +32,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Dashboard({ week }: Props) {
+  const isMinWidth = useMediaQuery("(min-width: 1199px)");
+
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
@@ -46,41 +48,66 @@ export default function Dashboard({ week }: Props) {
   return (
     <Box sx={{ flexGrow: 1, p: 3 }}>
       <Grid container spacing={4}>
-        <Grid item lg={5}>
-          <Grid container spacing={3}>
-            <Grid item lg={6}>
-              <Item>
-                <TotalIncome />
-              </Item>
+        {isMinWidth ? (
+          <Grid item lg={5}>
+            <Grid container spacing={3}>
+              <Grid item lg={6}>
+                <Item>
+                  <TotalIncome />
+                </Item>
+              </Grid>
+              <Grid item lg={6}>
+                <Item>
+                  <TotalCost />
+                </Item>
+              </Grid>
+              <Grid item lg={12}>
+                <Item>
+                  <Revenue />
+                </Item>
+              </Grid>
             </Grid>
-            <Grid item lg={6}>
-              <Item>
-                <TotalCost />
-              </Item>
+          </Grid>
+        ) : (
+          <>
+            <Grid item md={5}>
+              <Grid container spacing={3}>
+                <Grid item md={12}>
+                  <Item>
+                    <TotalIncome />
+                  </Item>
+                </Grid>
+                <Grid item md={12}>
+                  <Item>
+                    <TotalIncome />
+                  </Item>
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item lg={12}>
+            <Grid item md={7}>
               <Item>
                 <Revenue />
               </Item>
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid item lg={7}>
+          </>
+        )}
+
+        <Grid item lg={7} md={12}>
           <Item>
             <SalesChart />
           </Item>
         </Grid>
-        <Grid item lg={5}>
+        <Grid item lg={5} md={6}>
           <Item>
             <TopProducts />
           </Item>
         </Grid>
-        <Grid item lg={7}>
+        <Grid item lg={7} md={6}>
           <Item>
             <CustomerRatings />
           </Item>
         </Grid>
-        <Grid item lg={12}>
+        <Grid item md={12}>
           <Item>
             <ExpiredCategories week={week} />
           </Item>

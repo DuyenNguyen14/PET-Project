@@ -4,6 +4,7 @@ import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { useMediaQuery } from "@mui/material";
 
 type Props = {};
 
@@ -11,6 +12,7 @@ export default function Revenue({}: Props) {
   const { income, cost, targetRevenue } = useSelector(
     (state: RootState) => state.sales
   );
+  const isMinWidth = useMediaQuery("(min-width: 1199px)");
 
   const revenueArr = income.current.map(
     (value, index) => value - cost.current[index]
@@ -88,7 +90,13 @@ export default function Revenue({}: Props) {
     <>
       <CardTitle>Revenue</CardTitle>
       <Divider />
-      <CardText sx={{ height: "170px" }}>
+      <CardText
+        sx={
+          isMinWidth
+            ? { height: "170px" }
+            : { height: "336px", padding: "80px" }
+        }
+      >
         <ReactECharts option={option} />
       </CardText>
     </>
