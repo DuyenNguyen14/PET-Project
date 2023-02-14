@@ -5,24 +5,40 @@ type InitialState = {
   income: {
     current: number[];
     previous: number[];
+    currentTotal: number;
   };
   cost: {
     current: number[];
     previous: number[];
+    currentTotal: number;
+  };
+  revenue: {
+    values: number[];
+    total: number;
+    targetRevenue: number;
   };
   targetRevenue: number;
+  rosValues: number[];
 };
 
 const initialState: InitialState = {
   income: {
     current: [],
     previous: [],
+    currentTotal: 0,
   },
   cost: {
     current: [],
     previous: [],
+    currentTotal: 0,
+  },
+  revenue: {
+    values: [],
+    total: 0,
+    targetRevenue: 0,
   },
   targetRevenue: 0,
+  rosValues: [],
 };
 
 const dashboardReducer = createSlice({
@@ -35,6 +51,10 @@ const dashboardReducer = createSlice({
       for (const data of myData) {
         if (currWeek === data.week) {
           state.income.current = data.income;
+          state.income.currentTotal = state.income.current.reduce(
+            (a, b) => a + b,
+            0
+          );
         }
         if (prevWeek === data.week) {
           state.income.previous = data.income;
@@ -47,24 +67,44 @@ const dashboardReducer = createSlice({
       for (const data of myData) {
         if (currWeek === data.week) {
           state.cost.current = data.cost;
+          state.cost.currentTotal = state.cost.current.reduce(
+            (a, b) => a + b,
+            0
+          );
         }
         if (prevWeek === data.week) {
           state.cost.previous = data.cost;
         }
       }
     },
-    setTargetRevenue: (state: InitialState, action: PayloadAction<string>) => {
+    setRosValues: (state: InitialState, action: PayloadAction<string>) => {
       let currWeek = parseInt(action.payload);
       for (const data of myData) {
         if (currWeek === data.week) {
-          state.targetRevenue = data.targetRevenue;
+          state.rosValues = data.income.map(
+            (value, index) => ((value - data.cost[index]) * 100) / value
+          );
+        }
+      }
+    },
+    setRevenue: (
+      state: InitialState,
+      action: PayloadAction<string>
+    ) => {
+      let currWeek = parseInt(action.payload);
+      for (const data of myData) {
+        if (currWeek === data.week) {
+          state.revenue.values = data.income.map(
+            (value, index) => value - data.cost[index]
+          );
+          state.revenue.targetRevenue = data.targetRevenue;
         }
       }
     },
   },
 });
 
-export const { setIncome, setCost, setTargetRevenue } =
+export const { setIncome, setCost, setRevenue, setRosValues } =
   dashboardReducer.actions;
 
 export default dashboardReducer.reducer;

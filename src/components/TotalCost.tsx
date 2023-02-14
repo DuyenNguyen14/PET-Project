@@ -1,8 +1,8 @@
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, CardContent, Divider, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
+import CardTitle from "./CardTitle";
 
 type Props = {};
 
@@ -43,19 +43,18 @@ export default function TotalCost({}: Props) {
     <>
       <CardTitle>Total Cost</CardTitle>
       <Divider />
-      <CardText>
+      <CardContent>
         <Typography
           component="span"
           sx={{ fontWeight: "700", fontSize: "18px", color: "#000" }}
         >
-          {cost.current.length === 7 &&
-            cost.current.reduce((a, b) => a + b, 0).toLocaleString("vi")}{" "}
+          {cost.currentTotal.toLocaleString("vi")}{" "}
         </Typography>
         <Typography component="span">vnd</Typography>
         <Box>
           <ReactECharts option={option} style={{ height: "60px" }} />
         </Box>
-      </CardText>
+      </CardContent>
     </>
   );
 }

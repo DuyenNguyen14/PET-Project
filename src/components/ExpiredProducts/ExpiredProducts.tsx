@@ -8,13 +8,13 @@ import ExpiredProductsTable from "./ExpiredProductsTable";
 type Props = { categoryName: string };
 
 export default function ExpiredProducts({ categoryName }: Props) {
-  const { soonToExpireProducts } = useSelector(
+  const { expiringProductsArray } = useSelector(
     (state: RootState) => state.products
   );
 
   const arrProducts =
-    soonToExpireProducts.length > 0 &&
-    soonToExpireProducts.find((item) => item.category === categoryName);
+    expiringProductsArray.length > 0 &&
+    expiringProductsArray.find((item) => item.category === categoryName);
 
   const { products } = arrProducts as SoonToExpireProducts;
 

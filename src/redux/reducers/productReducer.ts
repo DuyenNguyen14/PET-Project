@@ -23,12 +23,17 @@ export interface SoonToExpireProducts {
 
 type InitialState = {
   topProducts: TopProduct[];
-  soonToExpireProducts: SoonToExpireProducts[];
+  expiringProductsArray: SoonToExpireProducts[];
+  expiringProductsByCategory: SoonToExpireProducts;
 };
 
 const initialState: InitialState = {
   topProducts: [],
-  soonToExpireProducts: [],
+  expiringProductsArray: [],
+  expiringProductsByCategory: {
+    category: "",
+    products: [],
+  },
 };
 
 const productReducer = createSlice({
@@ -39,25 +44,27 @@ const productReducer = createSlice({
       let weekNum = parseInt(action.payload);
       for (const data of myData) {
         if (weekNum === data.week) {
-          state.topProducts = data.topProducts;
+          state.topProducts = [...data.topProducts].sort(
+            (a, b) => b.earned - a.earned
+          );
         }
       }
     },
-    setSoonToExpireProducts: (
+    setExpiringProductsArray: (
       state: InitialState,
       action: PayloadAction<string>
     ) => {
       let weekNum = parseInt(action.payload);
       for (const data of myData) {
         if (weekNum === data.week) {
-          state.soonToExpireProducts = data.soonToExpireProducts;
+          state.expiringProductsArray = data.soonToExpireProducts;
         }
       }
     },
   },
 });
 
-export const { setTopProducts, setSoonToExpireProducts } =
+export const { setTopProducts, setExpiringProductsArray } =
   productReducer.actions;
 
 export default productReducer.reducer;

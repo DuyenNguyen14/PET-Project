@@ -6,7 +6,8 @@ import { AppDispatch } from "../redux/store";
 import {
   setCost,
   setIncome,
-  setTargetRevenue,
+  setRevenue,
+  setRosValues,
 } from "../redux/reducers/salesReducer";
 import Revenue from "../components/Revenue";
 import TotalIncome from "../components/TotalIncome";
@@ -14,7 +15,7 @@ import TotalCost from "../components/TotalCost";
 import SalesChart from "../components/SalesChart";
 import TopProducts from "../components/TopProducts/TopProducts";
 import {
-  setSoonToExpireProducts,
+  setExpiringProductsArray,
   setTopProducts,
 } from "../redux/reducers/productReducer";
 import CustomerRatings from "../components/CustomerRatings/CustomerRatings";
@@ -39,10 +40,11 @@ export default function Dashboard({ week }: Props) {
   useEffect(() => {
     dispatch(setIncome(week));
     dispatch(setCost(week));
-    dispatch(setTargetRevenue(week));
+    dispatch(setRevenue(week));
+    dispatch(setRosValues(week));
     dispatch(setTopProducts(week));
     dispatch(setRatings(week));
-    dispatch(setSoonToExpireProducts(week));
+    dispatch(setExpiringProductsArray(week));
   }, [week]);
 
   return (
@@ -79,7 +81,7 @@ export default function Dashboard({ week }: Props) {
                 </Grid>
                 <Grid item md={12}>
                   <Item>
-                    <TotalIncome />
+                    <TotalCost />
                   </Item>
                 </Grid>
               </Grid>

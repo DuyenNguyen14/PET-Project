@@ -1,21 +1,15 @@
-import { Divider } from "@mui/material";
+import { CardContent, Divider } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
+import CardTitle from "./CardTitle";
 
 type Props = {};
 
 export default function SalesChart({}: Props) {
-  const { income, cost } = useSelector((state: RootState) => state.sales);
-
-  const rosArray = () => {
-    if (income.current.length === 7 && cost.current.length === 7) {
-      return income.current.map(
-        (value, index) => ((value - cost.current[index]) * 100) / value
-      );
-    }
-  };
+  const { income, cost, rosValues } = useSelector(
+    (state: RootState) => state.sales
+  );
 
   const option = {
     legend: {
@@ -85,7 +79,7 @@ export default function SalesChart({}: Props) {
       {
         name: "Returns on Sales",
         type: "line",
-        data: rosArray(),
+        data: rosValues,
         yAxisIndex: 1,
         color: "#33BDEA",
         tooltip: {
@@ -99,11 +93,11 @@ export default function SalesChart({}: Props) {
     <>
       <CardTitle>Income & Cost in 7 days</CardTitle>
       <Divider />
-      <CardText>
+      <CardContent>
         {income.current.length === 7 && cost.current.length === 7 && (
           <ReactECharts option={option} style={{ height: "339px" }} />
         )}
-      </CardText>
+      </CardContent>
     </>
   );
 }

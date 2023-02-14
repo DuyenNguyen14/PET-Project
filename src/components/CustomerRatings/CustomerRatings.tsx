@@ -1,9 +1,9 @@
-import { Divider } from "@mui/material";
+import { CardContent, Divider } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { CardText, CardTitle } from "../../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
+import CardTitle from "../CardTitle";
 
 const colorPalette = ["#5DAAE8", "#A6CA7C", "#FFDD75", "#F46180"];
 
@@ -55,9 +55,9 @@ export default function CustomerRatings({}: Props) {
     <>
       <CardTitle>Customers Ratings</CardTitle>
       <Divider />
-      <CardText sx={{ height: "415px" }}>
+      <CardContent sx={{ height: "415px" }}>
         <ReactECharts option={option} style={{ height: "380px" }} />
-      </CardText>
+      </CardContent>
     </>
   );
 }

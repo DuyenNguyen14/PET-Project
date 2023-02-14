@@ -1,12 +1,12 @@
-import { Box, Button, Divider, IconButton } from "@mui/material";
+import { Box, Button, CardContent, Divider, IconButton } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { CardText, CardTitle } from "../../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import ExpiredProducts from "./ExpiredProducts";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { styled } from "@mui/material/styles";
+import CardTitle from "../CardTitle";
 
 type EventParams = {
   // The component name clicked,
@@ -41,7 +41,7 @@ type Props = {
 };
 
 export default function ExpiredCategories({ week }: Props) {
-  const { soonToExpireProducts } = useSelector(
+  const { expiringProductsArray } = useSelector(
     (state: RootState) => state.products
   );
   const [categoryName, setCategoryName] = useState<null | string>(null);
@@ -74,8 +74,8 @@ export default function ExpiredCategories({ week }: Props) {
     xAxis: {
       type: "category",
       data:
-        soonToExpireProducts.length > 0 &&
-        soonToExpireProducts.map((product) => product.category),
+        expiringProductsArray.length > 0 &&
+        expiringProductsArray.map((product) => product.category),
     },
     yAxis: {
       type: "value",
@@ -86,8 +86,8 @@ export default function ExpiredCategories({ week }: Props) {
     series: [
       {
         data:
-          soonToExpireProducts.length > 0 &&
-          soonToExpireProducts
+          expiringProductsArray.length > 0 &&
+          expiringProductsArray
             .map((category) =>
               category.products.reduce((sum, prod) => sum + prod.quantity, 0)
             )
@@ -112,7 +112,7 @@ export default function ExpiredCategories({ week }: Props) {
     <>
       <CardTitle>Soon to be expired products</CardTitle>
       <Divider />
-      <CardText sx={{ height: "450px" }}>
+      <CardContent sx={{ height: "450px" }}>
         {!goBack ? (
           <ReactECharts
             option={option}
@@ -130,7 +130,7 @@ export default function ExpiredCategories({ week }: Props) {
             </Box>
           )
         )}
-      </CardText>
+      </CardContent>
     </>
   );
 }

@@ -1,24 +1,18 @@
 import Divider from "@mui/material/Divider";
 import React from "react";
-import { CardText, CardTitle } from "../theme/globalStyles";
 import ReactECharts from "echarts-for-react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { useMediaQuery } from "@mui/material";
+import { CardContent, useMediaQuery } from "@mui/material";
+import CardTitle from "./CardTitle";
 
 type Props = {};
 
 export default function Revenue({}: Props) {
-  const { income, cost, targetRevenue } = useSelector(
-    (state: RootState) => state.sales
-  );
+  const { revenue } = useSelector((state: RootState) => state.sales);
   const isMinWidth = useMediaQuery("(min-width: 1199px)");
 
-  const revenueArr = income.current.map(
-    (value, index) => value - cost.current[index]
-  );
-
-  const totalRevenue = revenueArr.reduce((a, b) => a + b, 0);
+  const totalRevenue = revenue.values.reduce((a, b) => a + b, 0);
 
   const option = {
     series: [
@@ -55,7 +49,7 @@ export default function Revenue({}: Props) {
           distance: -65,
           formatter: (value: number) =>
             value === 1
-              ? `${(targetRevenue / 1000000).toLocaleString("vi")}m`
+              ? `${(revenue.targetRevenue / 1000000).toLocaleString("vi")}m`
               : "",
           color: "#676E8A",
         },
@@ -70,7 +64,7 @@ export default function Revenue({}: Props) {
         data: [
           {
             name: totalRevenue.toLocaleString("vi") + " vnd",
-            value: totalRevenue / targetRevenue,
+            value: totalRevenue / revenue.targetRevenue,
           },
         ],
         title: {
@@ -90,7 +84,7 @@ export default function Revenue({}: Props) {
     <>
       <CardTitle>Revenue</CardTitle>
       <Divider />
-      <CardText
+      <CardContent
         sx={
           isMinWidth
             ? { height: "170px" }
@@ -98,7 +92,7 @@ export default function Revenue({}: Props) {
         }
       >
         <ReactECharts option={option} />
-      </CardText>
+      </CardContent>
     </>
   );
 }
